@@ -1,0 +1,19 @@
+import javax.swing.JOptionPane;
+public class Exercicio4b {
+    public static void main (String[] args) {
+        String aux;
+        double valor;
+
+        while (true) {
+            aux = JOptionPane.showInputDialog("Insira o valor para ser reajustado: ");
+            valor = Double.parseDouble(aux);
+            
+            if (valor == 0) {
+                break;
+            } else {
+                valor = Math.round(valor*1.12);
+                JOptionPane.showMessageDialog(null, "Com 12% de ajuste fica: R$ " + valor);
+            }
+        }
+    }
+}

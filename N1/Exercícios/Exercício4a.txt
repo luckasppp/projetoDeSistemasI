@@ -1,0 +1,17 @@
+import javax.swing.JOptionPane;
+
+public class Exercicio4a {
+    public static void main (String[] args) {
+        int jogadas = 0, soma = 0, valor = 0;
+        String aux = "";
+        
+        aux = JOptionPane.showInputDialog("Insira a quantidade de vezes o dados será lançado: ");
+        jogadas = Integer.parseInt(aux);
+        for (int i = 0; i < jogadas; i++) {
+            valor = (int) ((Math.random()*6)+1);
+            System.out.println("O valor jogador foi: " + valor);
+            soma += valor;
+        }
+        System.out.println("A soma dos lançamentos é: " + soma);
+    }
+}

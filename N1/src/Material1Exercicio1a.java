@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;
+
+public class Material1Exercicio1a {
+    public static void main(String[] args) {
+        String aux = "";
+        double base = 0, altura = 0, area = 0, perimetro = 0;
+
+        aux = JOptionPane.showInputDialog( "Insira um valor para base (m): ");
+        base = Double.parseDouble(aux);
+
+        aux = JOptionPane.showInputDialog("Insira um valor para altura (m): ");
+        altura = Double.parseDouble(aux);
+
+        area = base * altura;
+        perimetro = 2 * base + 2 * altura;
+
+        JOptionPane.showMessageDialog(null, "A área é: " + area + "m²");
+        System.out.println("\n");
+        JOptionPane.showMessageDialog(null, "O perimetro é: " + perimetro + "m");
+        
+    }
+}

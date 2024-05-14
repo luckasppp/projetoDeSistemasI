@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+
+public class Exercicio5c {
+    public static void main(String[] args) {
+        int n = 0;
+
+        // Pede para o usuário q quantidade de números e cria um array com o tamanho inserido:
+        n = Integer.parseInt(JOptionPane.showInputDialog("Insira quantos números serão gerados: "));
+        int[] numerosInt = new int[n];
+
+        // Gera os valores aleatórios e imprime:
+        for (int i = 0; i < n; i++) {
+            numerosInt[i] = (int) (Math.random()*10+1);
+            System.out.print(numerosInt[i] + ":");
+        }
+        System.out.println("\n");
+
+        // Cria um array para verificar a frequência do tamanho inserido pelo usuário:
+        int[] frequencia = new int[11]; // O valor aqui precisa ser igual ao range de Random.
+        for (int numero : numerosInt) {
+            frequencia[numero]++;
+        }
+
+        System.out.println("Frequência de ocorrência dos números:");
+        for (int i = 0; i < frequencia.length; i++) {
+            if (frequencia[i] > 0) {
+                System.out.println(i + ": " + frequencia[i] + " vez(es)");
+            }
+        }
+    }
+}

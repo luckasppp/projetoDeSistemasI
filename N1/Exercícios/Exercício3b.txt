@@ -1,0 +1,36 @@
+mport javax.swing.JOptionPane;
+
+public class Exercicio3b {
+
+    /* No método main que receba 3 notas de cada aluno
+    de uma turma e informe a média do aluno e a média
+    da turma */
+    public static void main(String[] args) {
+        String aux = "";
+        double mediaUm = 0, mediaDois = 0, mediaTres = 0, mediaTurma = 0, valor = 0;
+
+        for (int i = 0; i < 3; i++) {
+            double media = 0;
+            for (int j = 0; j < 3; j++) {
+                aux = JOptionPane.showInputDialog("Insira a " + (j + 1) + "ª nota do " + (i + 1) + "º aluno: ");
+                valor = Double.parseDouble(aux);
+                media += valor;
+            }
+            if (i == 0) {
+                mediaUm = media / 3;
+            } else if (i == 1) {
+                mediaDois = media / 3;
+            } else {
+                mediaTres = media / 3;
+            }
+            mediaTurma += media / 3;
+        }
+
+        mediaTurma /= 3;
+
+        System.out.println("A média do 1º aluno é: " + mediaUm + "\n");
+        System.out.println("A média do 2º aluno é: " + mediaDois + "\n");
+        System.out.println("A média do 3º aluno é: " + mediaTres + "\n");
+        System.out.println("A média da turma é: " + mediaTurma + "\n");
+    }
+}

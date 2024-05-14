@@ -1,0 +1,14 @@
+public class Exercicio4c {
+    public static void main(String[] args) {
+        int valor = 0, aux = 0;
+        String senha = "";
+
+        valor = (int) (Math.random()*5)+5;
+
+        for(int i = 0; i < valor; i++){
+            aux = (int) (Math.random()*10);
+            senha += String.valueOf(aux);
+        }
+        System.out.println("O valor sorteado foi " + valor + " então a senho é: " + senha);
+    }
+}
