@@ -49,5 +49,23 @@ public class App {
         // Exercício 5:
         // Material4Exercicio5 brasil = new Material4Exercicio5("Brasil", "Brasília", 989394243);
 
+        // Material 5 - Teste de herança.
+        Material5Avo braga = new Material5Avo();
+        braga.nome = "Braga";
+        braga.corOlhos = "Castanho Escuro";
+        braga.ler();
+
+        Material5Pai roberto = new Material5Pai();
+        roberto.nome = "Roberto";
+        roberto.ler();
+
+        Material5Filho lucas = new Material5Filho();
+        lucas.nome = "Lucas";
+        lucas.corCabelo = "Preto";
+        lucas.corOlhos = "Castanho Escuro";
+        lucas.ler();
+        lucas.trabalhar();
+
+
     }
 }
