@@ -1,0 +1,162 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        // Material5 Exercicio1:
+        Material5Exercicio1ab casa1 = new Material5Exercicio1ab("Casa de Leilão", 100000, "Barreto", 250, 1, 2, 0);
+        System.out.println(casa1.getBairro());
+    }
+}
+
+// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+// porém o nome da classe deveria ser "Imovel".
+
+public class Material5Exercicio1 {
+    String titulo;
+    double valor;
+    String bairro;
+    double metragem;
+
+    public Material5Exercicio1() {
+
+    }
+
+    public Material5Exercicio1(String titulo, double valor, String bairro, double metragem) {
+        this.titulo = titulo;
+        this.valor = valor;
+        this.bairro = bairro;
+        this.metragem = metragem;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public double getMetragem() {
+        return metragem;
+    }
+    public void setMetragem(double metragem) {
+        this.metragem = metragem;
+    }
+}
+
+// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+// porém o nome da classe deveria ser "Residencial".
+
+public class Material5Exercicio1a extends Material5Exercicio1 {
+    int qtdVagasGaragem;
+    int qtdQuartos;
+    int qtdSuites;
+
+    public Material5Exercicio1a () {
+
+    }
+
+    public Material5Exercicio1a (String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites) {
+        super(titulo, valor, bairro, metragem);
+        this.qtdVagasGaragem = qtdVagasGaragem;
+        this.qtdQuartos = qtdQuartos;
+        this.qtdSuites = qtdSuites;
+    }
+
+    public int getQtdVagasGaragem() {
+        return qtdVagasGaragem;
+    }
+    public void setQtdVagasGaragem(int qtdVagasGaragem) {
+        this.qtdVagasGaragem = qtdVagasGaragem;
+    }
+
+    public int getQtdQuartos() {
+        return qtdQuartos;
+    }
+    public void setQtdQuartos(int qtdQuartos) {
+        this.qtdQuartos = qtdQuartos;
+    }
+
+    public int getQtdSuites() {
+        return qtdSuites;
+    }
+    public void setQtdSuites(int qtdSuites) {
+        this.qtdSuites = qtdSuites;
+    }
+}
+
+// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+// porém o nome da classe deveria ser "Terreno".
+
+public class Material5Exercicio1b extends Material5Exercicio1{
+    public Material5Exercicio1b() {
+
+    }
+
+    public Material5Exercicio1b(String titulo, double valor, String bairro, double metragem) {
+        super(titulo, valor, bairro, metragem);
+    }
+}
+
+// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+// porém o nome da classe deveria ser "Apartamento".
+public class Material5Exercicio1aa extends Material5Exercicio1a {
+    int andar;
+    boolean solNascente;
+    String torre;
+
+    public Material5Exercicio1aa() {
+        
+    }
+
+    public Material5Exercicio1aa(String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites, int andar, boolean solNascente, String torre) {
+        super(titulo, valor, bairro, metragem, qtdVagasGaragem, qtdQuartos, qtdSuites);
+        this.andar = andar;
+        this.solNascente = solNascente;
+        this.torre = torre;
+    }
+
+    public int getAndar() {
+        return andar;
+    }
+    public void setAndar(int andar) {
+        this.andar = andar;
+    }
+
+    public boolean getSolNascente() {
+        return solNascente;
+    }
+    public void setSolNascente(boolean solNascente) {
+        this.solNascente = solNascente;
+    }
+
+    public String getTorre() {
+        return torre;
+    }
+    public void setTorre(String torre) {
+        this.torre = torre;
+    }
+}
+
+// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+// porém o nome da classe deveria ser "Casa".
+public class Material5Exercicio1ab extends Material5Exercicio1a{
+    public Material5Exercicio1ab() {
+        
+    }
+
+    public Material5Exercicio1ab(String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites) {
+        super(titulo, valor, bairro, metragem, qtdVagasGaragem, qtdQuartos, qtdSuites);
+    }
+}

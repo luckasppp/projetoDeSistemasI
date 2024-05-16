@@ -68,8 +68,12 @@ public class App {
         
 
         // Material 5 - Teste de herança (super).
-        Material5Filho fanie = new Material5Filho("Fanie", "Castanho", "Branca", "Castanho");
-        System.out.println(fanie.corCabelo);
+        // Material5Filho fanie = new Material5Filho("Fanie", "Castanho", "Branca", "Castanho");
+        // System.out.println(fanie.corCabelo);
+
+        // Material5 Exercicio1:
+        Material5Exercicio1ab casa1 = new Material5Exercicio1ab("Casa de Leilão", 100000, "Barreto", 250, 1, 2, 0);
+        System.out.println(casa1.getBairro());
 
     }
 }
