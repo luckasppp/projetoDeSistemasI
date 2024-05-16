@@ -75,5 +75,14 @@ public class App {
         Material5Exercicio1ab casa1 = new Material5Exercicio1ab("Casa de Leilão", 100000, "Barreto", 250, 1, 2, 0);
         System.out.println(casa1.getBairro());
 
+        Material5Exercicio1b terreno1 = new Material5Exercicio1b("Terreno no Mar do Norte", 250000, "Mar do Norte", 235);
+        System.out.println(terreno1.getTitulo());
+        
+        Material5Exercicio1 imovel1 = new Material5Exercicio1();
+        imovel1.setBairro("Parque Aeroporto");
+        imovel1.setTitulo("Casa do Aeroporto");
+        imovel1.setValor(280000);
+        System.out.println("A " + imovel1.getTitulo() + " localizada no bairro " + imovel1.getBairro() + " custa: " + imovel1.getValor());
+
     }
 }
