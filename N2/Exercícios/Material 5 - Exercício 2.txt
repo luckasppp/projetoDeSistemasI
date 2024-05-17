@@ -1,0 +1,141 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        // Material 5 - Exercicio 2:
+        Material5Exercicio2 eletronico1 = new Material5Exercicio2(true); // Utilizando o segundo método construtor de Eletronico
+        System.out.println("O eletrônico está ligado?\n" + eletronico1.getLigado() + "\n");
+        eletronico1.ligar();    // Tentando ligar o eletrônico sendo que já está ligado.
+        System.out.println();
+        eletronico1.desligar();
+        System.out.println("O eletrônico está ligado?\n" + eletronico1.ligado + "\n");  // Fazendo a mesma pergunta anterior só que acessando a resposta por meio de atributo.
+
+        // Material5Exercicio2a tablet0 = new Material5Exercicio2a(true, 12);  // Tentando criar objeto com o volume maior que o máximo que é 10. (Comente após o teste)
+        Material5Exercicio2a tablet1 = new Material5Exercicio2a(true, 9);  // Tentando criar objeto com o volume dentro do intervalo 0 - 10.
+        System.out.println(tablet1.volume);
+        tablet1.aumentarVolume();
+        tablet1.aumentarVolume(); // Tenta aumentar o volume para > 10 e o método não deixa.
+        System.out.println("Volume: " + tablet1.getVolume());
+        tablet1.diminuirVolume();
+        tablet1.diminuirVolume();
+        tablet1.diminuirVolume();
+        tablet1.diminuirVolume();
+        System.out.println("Volume: " + tablet1.volume);
+
+        Material5Exercicio2b radio1 = new Material5Exercicio2b();
+        System.out.println(radio1.ligado);
+        radio1.desligar();
+        radio1.ligar();
+        System.out.println(radio1.getLigado());
+
+    }
+}
+
+public class Material5Exercicio2 {
+    // Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+    // porém o nome da classe deveria ser "Eletronico".
+
+    boolean ligado = false;
+
+    public void ligar() {
+        if(!this.ligado) {
+            this.ligado = true;
+        } else {
+            System.out.println("O aparelho já está ligado.");
+        }
+    }
+
+    public void desligar() {
+        if (this.ligado) {
+            this.ligado = false;
+        } else {
+            System.out.println("O aparelho já está desligado.");
+        }
+    }
+
+    public boolean getLigado() {
+        return this.ligado;
+    }
+
+    public Material5Exercicio2() {
+
+    }
+
+    public Material5Exercicio2(boolean ligado) {
+        this.ligado = ligado;
+    }
+}
+
+public class Material5Exercicio2a extends Material5Exercicio2{
+    // Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+    // porém o nome da classe deveria ser "Tablet".
+
+    public int volume = 0;
+
+    public void aumentarVolume() {
+        if (this.volume < 10) {
+            this.volume += 1;   
+        } else {
+            System.out.println("O volume já está no máximo.");
+        }
+    }
+
+    public void diminuirVolume() {
+        if (this.volume > 0) {
+            this.volume -= 1;   
+        }  else {
+            System.out.println("O volume já está no mínimo.");
+        }
+    }
+
+    public int getVolume() {
+        return this.volume;
+    }
+
+    public Material5Exercicio2a() {
+
+    }
+
+    public Material5Exercicio2a(boolean ligado, int volume) {
+        super(ligado);
+        if (volume >= 0 && volume <= 10) {
+            this.volume = volume;
+        } else {
+            throw new IllegalArgumentException("Volume fora do intervalo permitido. Não foi possível instanciar o objeto.");
+        }
+    }
+}
+
+public class Material5Exercicio2b extends Material5Exercicio2{
+    // Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
+    // porém o nome da classe deveria ser "Radio".
+
+    public boolean tocandoMusica = false;
+
+    public void tocarMusica() {
+        if (!this.tocandoMusica) {
+            this.tocandoMusica = true;
+        } else {
+            System.out.println("O rádio já está tocando música.");
+        }
+    }
+
+    public void pararMusica() {
+        if (this.tocandoMusica) {
+            this.tocandoMusica = false;
+        } else {
+            System.out.println("O rádio não está tocando música.");
+        }
+    }
+
+    public Material5Exercicio2b() {
+
+    }
+
+    public Material5Exercicio2b(boolean ligado, boolean tocandoMusica) {
+        super(ligado);
+        if (ligado == false && tocandoMusica == true) {
+            throw new IllegalArgumentException("Não é possível tocar música com o rádio desligado.");
+        } else {
+            this.tocandoMusica = tocandoMusica;
+        }
+    }
+}
