@@ -84,31 +84,42 @@ public class App {
         // imovel1.setValor(280000);
         // System.out.println("A " + imovel1.getTitulo() + " localizada no bairro " + imovel1.getBairro() + " custa: " + imovel1.getValor());
 
-        // Material 5 - Exercicio 2:
-        Material5Exercicio2 eletronico1 = new Material5Exercicio2(true); // Utilizando o segundo método construtor de Eletronico
-        System.out.println("O eletrônico está ligado?\n" + eletronico1.getLigado() + "\n");
-        eletronico1.ligar();    // Tentando ligar o eletrônico sendo que já está ligado.
-        System.out.println();
-        eletronico1.desligar();
-        System.out.println("O eletrônico está ligado?\n" + eletronico1.ligado + "\n");  // Fazendo a mesma pergunta anterior só que acessando a resposta por meio de atributo.
+        // // Material 5 - Exercicio 2:
+        // Material5Exercicio2 eletronico1 = new Material5Exercicio2(true); // Utilizando o segundo método construtor de Eletronico
+        // System.out.println("O eletrônico está ligado?\n" + eletronico1.getLigado() + "\n");
+        // eletronico1.ligar();    // Tentando ligar o eletrônico sendo que já está ligado.
+        // System.out.println();
+        // eletronico1.desligar();
+        // System.out.println("O eletrônico está ligado?\n" + eletronico1.ligado + "\n");  // Fazendo a mesma pergunta anterior só que acessando a resposta por meio de atributo.
 
-        // Material5Exercicio2a tablet0 = new Material5Exercicio2a(true, 12);  // Tentando criar objeto com o volume maior que o máximo que é 10. (Comente após o teste)
-        Material5Exercicio2a tablet1 = new Material5Exercicio2a(true, 9);  // Tentando criar objeto com o volume dentro do intervalo 0 - 10.
-        System.out.println(tablet1.volume);
-        tablet1.aumentarVolume();
-        tablet1.aumentarVolume(); // Tenta aumentar o volume para > 10 e o método não deixa.
-        System.out.println("Volume: " + tablet1.getVolume());
-        tablet1.diminuirVolume();
-        tablet1.diminuirVolume();
-        tablet1.diminuirVolume();
-        tablet1.diminuirVolume();
-        System.out.println("Volume: " + tablet1.volume);
+        // // Material5Exercicio2a tablet0 = new Material5Exercicio2a(true, 12);  // Tentando criar objeto com o volume maior que o máximo que é 10. (Comente após o teste)
+        // Material5Exercicio2a tablet1 = new Material5Exercicio2a(true, 9);  // Tentando criar objeto com o volume dentro do intervalo 0 - 10.
+        // System.out.println(tablet1.volume);
+        // tablet1.aumentarVolume();
+        // tablet1.aumentarVolume(); // Tenta aumentar o volume para > 10 e o método não deixa.
+        // System.out.println("Volume: " + tablet1.getVolume());
+        // tablet1.diminuirVolume();
+        // tablet1.diminuirVolume();
+        // tablet1.diminuirVolume();
+        // tablet1.diminuirVolume();
+        // System.out.println("Volume: " + tablet1.volume);
 
-        Material5Exercicio2b radio1 = new Material5Exercicio2b();
-        System.out.println(radio1.ligado);
-        radio1.desligar();
-        radio1.ligar();
-        System.out.println(radio1.getLigado());
+        // Material5Exercicio2b radio1 = new Material5Exercicio2b();
+        // System.out.println(radio1.ligado);
+        // radio1.desligar();
+        // radio1.ligar();
+        // System.out.println(radio1.getLigado());
+
+
+        // Material 6 - Funcionário/Gerente/Escriturario
+
+        Material6Escriturario func1 = new Material6Escriturario(1, "Lucas", 2100, 1);
+        System.out.println(func1.calcularPlr() + func1.salario);
+
+        Material6Gerente func2 = new Material6Gerente(2, "Braga", 5350, 3);
+        System.out.println(func2.calcularPlr() + func2.salario);
+
+
 
     }
 }
