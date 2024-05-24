@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class App {
     public static void main(String[] args) throws Exception {
         // Exercício 1:
@@ -111,15 +113,26 @@ public class App {
         // System.out.println(radio1.getLigado());
 
 
-        // Material 6 - Funcionário/Gerente/Escriturario
+        // // Material 6 - Funcionário/Gerente/Escriturario
+        // Material6Escriturario func1 = new Material6Escriturario(1, "Lucas", 2100, 1);
+        // System.out.println(func1.calcularPlr() + func1.salario);
 
-        Material6Escriturario func1 = new Material6Escriturario(1, "Lucas", 2100, 1);
-        System.out.println(func1.calcularPlr() + func1.salario);
+        // Material6Gerente func2 = new Material6Gerente(2, "Braga", 5350, 3);
+        // System.out.println(func2.calcularPlr() + func2.salario);
 
-        Material6Gerente func2 = new Material6Gerente(2, "Braga", 5350, 3);
-        System.out.println(func2.calcularPlr() + func2.salario);
+        // Material 6 - Exercício 1 (Funcionario/Freelancer/Vendedor):
+        DecimalFormat formatacao = new DecimalFormat();
 
+        formatacao.applyLocalizedPattern("###.###,00");
+        Funcionario func1 = new Funcionario();
+        func1.nome = "Lucas Damasceno";
+        func1.salarioBase = 2166.49;
+        System.out.println("Os encargos trabalhistas são: R$ " +
+        formatacao.format(func1.calcularEncargos()));
 
+        System.out.println("O funcionario recebe: R$ " + func1.getSalarioBase());
 
+        System.out.println("A empresa gasta com o funcionário: R$ " + 
+        formatacao.format(GastoTotal.calcularGastos(func1)));
     }
 }
