@@ -1,13 +1,13 @@
 public class App {
     public static void main(String[] args) throws Exception {
         // Material5 Exercicio1:
-        Material5Exercicio1ab casa1 = new Material5Exercicio1ab("Casa de Leilão", 100000, "Barreto", 250, 1, 2, 0);
+        Casa casa1 = new Casa("Casa de Leilão", 100000, "Barreto", 250, 1, 2, 0);
         System.out.println(casa1.getBairro());
 
-        Material5Exercicio1b terreno1 = new Material5Exercicio1b("Terreno no Mar do Norte", 250000, "Mar do Norte", 235);
+        Terreno terreno1 = new Terreno("Terreno no Mar do Norte", 250000, "Mar do Norte", 235);
         System.out.println(terreno1.getTitulo());
         
-        Material5Exercicio1 imovel1 = new Material5Exercicio1();
+        Imovel imovel1 = new Imovel();
         imovel1.setBairro("Parque Aeroporto");
         imovel1.setTitulo("Casa do Aeroporto");
         imovel1.setValor(280000);
@@ -15,20 +15,18 @@ public class App {
     }
 }
 
-// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-// porém o nome da classe deveria ser "Imovel".
 
-public class Material5Exercicio1 {
+public class Imovel {
     String titulo;
     double valor;
     String bairro;
     double metragem;
 
-    public Material5Exercicio1() {
+    public Imovel() {
 
     }
 
-    public Material5Exercicio1(String titulo, double valor, String bairro, double metragem) {
+    public Imovel(String titulo, double valor, String bairro, double metragem) {
         this.titulo = titulo;
         this.valor = valor;
         this.bairro = bairro;
@@ -64,19 +62,16 @@ public class Material5Exercicio1 {
     }
 }
 
-// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-// porém o nome da classe deveria ser "Residencial".
-
-public class Material5Exercicio1a extends Material5Exercicio1 {
+public class Residencial extends Imovel {
     int qtdVagasGaragem;
     int qtdQuartos;
     int qtdSuites;
 
-    public Material5Exercicio1a () {
+    public Residencial () {
 
     }
 
-    public Material5Exercicio1a (String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites) {
+    public Residencial (String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites) {
         super(titulo, valor, bairro, metragem);
         this.qtdVagasGaragem = qtdVagasGaragem;
         this.qtdQuartos = qtdQuartos;
@@ -105,31 +100,26 @@ public class Material5Exercicio1a extends Material5Exercicio1 {
     }
 }
 
-// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-// porém o nome da classe deveria ser "Terreno".
-
-public class Material5Exercicio1b extends Material5Exercicio1{
-    public Material5Exercicio1b() {
+public class Terreno extends Imovel{
+    public Terreno() {
 
     }
 
-    public Material5Exercicio1b(String titulo, double valor, String bairro, double metragem) {
+    public Terreno(String titulo, double valor, String bairro, double metragem) {
         super(titulo, valor, bairro, metragem);
     }
 }
 
-// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-// porém o nome da classe deveria ser "Apartamento".
-public class Material5Exercicio1aa extends Material5Exercicio1a {
+public class Apartamento extends Residencial {
     int andar;
     boolean solNascente;
     String torre;
 
-    public Material5Exercicio1aa() {
+    public Apartamento() {
         
     }
 
-    public Material5Exercicio1aa(String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites, int andar, boolean solNascente, String torre) {
+    public Apartamento(String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites, int andar, boolean solNascente, String torre) {
         super(titulo, valor, bairro, metragem, qtdVagasGaragem, qtdQuartos, qtdSuites);
         this.andar = andar;
         this.solNascente = solNascente;
@@ -158,14 +148,12 @@ public class Material5Exercicio1aa extends Material5Exercicio1a {
     }
 }
 
-// Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-// porém o nome da classe deveria ser "Casa".
-public class Material5Exercicio1ab extends Material5Exercicio1a{
-    public Material5Exercicio1ab() {
+public class Casa extends Residencial{
+    public Casa() {
         
     }
 
-    public Material5Exercicio1ab(String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites) {
+    public Casa(String titulo, double valor, String bairro, double metragem, int qtdVagasGaragem, int qtdQuartos, int qtdSuites) {
         super(titulo, valor, bairro, metragem, qtdVagasGaragem, qtdQuartos, qtdSuites);
     }
 }
