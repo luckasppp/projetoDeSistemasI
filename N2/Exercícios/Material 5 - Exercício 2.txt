@@ -1,15 +1,15 @@
 public class App {
     public static void main(String[] args) throws Exception {
         // Material 5 - Exercicio 2:
-        Material5Exercicio2 eletronico1 = new Material5Exercicio2(true); // Utilizando o segundo método construtor de Eletronico
+        Eletronico eletronico1 = new Eletronico(true); // Utilizando o segundo método construtor de Eletronico
         System.out.println("O eletrônico está ligado?\n" + eletronico1.getLigado() + "\n");
         eletronico1.ligar();    // Tentando ligar o eletrônico sendo que já está ligado.
         System.out.println();
         eletronico1.desligar();
         System.out.println("O eletrônico está ligado?\n" + eletronico1.ligado + "\n");  // Fazendo a mesma pergunta anterior só que acessando a resposta por meio de atributo.
 
-        // Material5Exercicio2a tablet0 = new Material5Exercicio2a(true, 12);  // Tentando criar objeto com o volume maior que o máximo que é 10. (Comente após o teste)
-        Material5Exercicio2a tablet1 = new Material5Exercicio2a(true, 9);  // Tentando criar objeto com o volume dentro do intervalo 0 - 10.
+        // Tablet tablet0 = new Tablet(true, 12);  // Tentando criar objeto com o volume maior que o máximo que é 10. (Comente após o teste)
+        Tablet tablet1 = new Tablet(true, 9);  // Tentando criar objeto com o volume dentro do intervalo 0 - 10.
         System.out.println(tablet1.volume);
         tablet1.aumentarVolume();
         tablet1.aumentarVolume(); // Tenta aumentar o volume para > 10 e o método não deixa.
@@ -20,7 +20,7 @@ public class App {
         tablet1.diminuirVolume();
         System.out.println("Volume: " + tablet1.volume);
 
-        Material5Exercicio2b radio1 = new Material5Exercicio2b();
+        Radio radio1 = new Radio();
         System.out.println(radio1.ligado);
         radio1.desligar();
         radio1.ligar();
@@ -29,9 +29,7 @@ public class App {
     }
 }
 
-public class Material5Exercicio2 {
-    // Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-    // porém o nome da classe deveria ser "Eletronico".
+public class Eletronico {
 
     boolean ligado = false;
 
@@ -55,19 +53,16 @@ public class Material5Exercicio2 {
         return this.ligado;
     }
 
-    public Material5Exercicio2() {
+    public Eletronico() {
 
     }
 
-    public Material5Exercicio2(boolean ligado) {
+    public Eletronico(boolean ligado) {
         this.ligado = ligado;
     }
 }
 
-public class Material5Exercicio2a extends Material5Exercicio2{
-    // Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-    // porém o nome da classe deveria ser "Tablet".
-
+public class Tablet extends Eletronico{
     public int volume = 0;
 
     public void aumentarVolume() {
@@ -90,11 +85,11 @@ public class Material5Exercicio2a extends Material5Exercicio2{
         return this.volume;
     }
 
-    public Material5Exercicio2a() {
+    public Tablet() {
 
     }
 
-    public Material5Exercicio2a(boolean ligado, int volume) {
+    public Tablet(boolean ligado, int volume) {
         super(ligado);
         if (volume >= 0 && volume <= 10) {
             this.volume = volume;
@@ -104,10 +99,7 @@ public class Material5Exercicio2a extends Material5Exercicio2{
     }
 }
 
-public class Material5Exercicio2b extends Material5Exercicio2{
-    // Por questão de organização dos arquivos em minha pasta de estudo coloquei a classe com o nome a baixo,
-    // porém o nome da classe deveria ser "Radio".
-
+public class Radio extends Eletronico{
     public boolean tocandoMusica = false;
 
     public void tocarMusica() {
@@ -126,11 +118,11 @@ public class Material5Exercicio2b extends Material5Exercicio2{
         }
     }
 
-    public Material5Exercicio2b() {
+    public Radio() {
 
     }
 
-    public Material5Exercicio2b(boolean ligado, boolean tocandoMusica) {
+    public Radio(boolean ligado, boolean tocandoMusica) {
         super(ligado);
         if (ligado == false && tocandoMusica == true) {
             throw new IllegalArgumentException("Não é possível tocar música com o rádio desligado.");
