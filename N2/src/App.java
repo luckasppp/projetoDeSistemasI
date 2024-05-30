@@ -120,19 +120,42 @@ public class App {
         // Material6Gerente func2 = new Material6Gerente(2, "Braga", 5350, 3);
         // System.out.println(func2.calcularPlr() + func2.salario);
 
-        // Material 6 - Exercício 1 (Funcionario/Freelancer/Vendedor):
-        DecimalFormat formatacao = new DecimalFormat();
+        // // Material 6 - Exercício 1 (Funcionario/Freelancer/Vendedor):
+        // DecimalFormat formatacao = new DecimalFormat();
 
-        formatacao.applyLocalizedPattern("###.###,00");
-        Funcionario func1 = new Funcionario();
-        func1.nome = "Lucas Damasceno";
-        func1.salarioBase = 2166.49;
-        System.out.println("Os encargos trabalhistas são: R$ " +
-        formatacao.format(func1.calcularEncargos()));
+        // formatacao.applyLocalizedPattern("###.###,00");
+        // Funcionario func1 = new Funcionario();
+        // func1.nome = "Lucas Damasceno";
+        // func1.salarioBase = 2166.49;
+        // System.out.println("Os encargos trabalhistas são: R$ " +
+        // formatacao.format(func1.calcularEncargos()));
 
-        System.out.println("O funcionario recebe: R$ " + func1.getSalarioBase());
+        // System.out.println("O funcionario recebe: R$ " + func1.getSalarioBase());
 
-        System.out.println("A empresa gasta com o funcionário: R$ " + 
-        formatacao.format(GastoTotal.calcularGastos(func1)));
+        // System.out.println("A empresa gasta com o funcionário: R$ " + 
+        // formatacao.format(GastoTotal.calcularGastos(func1)));
+
+        // Material 7 - Teste em sala
+
+        Material7Empresa empresa = new Material7Empresa();
+        Material7EmpresaFranqueada franqueada = new Material7EmpresaFranqueada();
+
+        empresa.m1();   // método default   
+        empresa.m2();   // método protected
+
+        empresa.cnpj = 15236544;        // método default 
+        empresa.razao_social ="";       // método public 
+        empresa.nome_fantasia = "";     // método protected
+        // empresa.responsavel = "Lucas";  // método private
+
+        franqueada.m1();   // método default   
+        franqueada.m2();   // método protected
+        // franqueada.m3();   // método private
+
+        franqueada.cnpj = 15236544;        // atributo default 
+        franqueada.razao_social ="";       // atributo public 
+        franqueada.nome_fantasia = "";     // atributo protected
+        // franqueada.responsavel = "Lucas";  // atributo private
+
     }
 }
