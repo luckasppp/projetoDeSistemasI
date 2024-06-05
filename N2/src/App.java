@@ -133,27 +133,38 @@ public class App {
         // System.out.println("A empresa gasta com o funcionário: R$ " + 
         // formatacao.format(GastoTotal.calcularGastos(func1)));
 
-        // Material 7 - Teste em sala
+        // // Material 7 - Teste em sala
+        // Material7Empresa empresa = new Material7Empresa();
+        // Material7EmpresaFranqueada franqueada = new Material7EmpresaFranqueada();
 
-        Material7Empresa empresa = new Material7Empresa();
-        Material7EmpresaFranqueada franqueada = new Material7EmpresaFranqueada();
+        // empresa.m1();   // método default   
+        // empresa.m2();   // método protected
 
-        empresa.m1();   // método default   
-        empresa.m2();   // método protected
+        // empresa.cnpj = 15236544;        // método default 
+        // empresa.razao_social ="";       // método public 
+        // empresa.nome_fantasia = "";     // método protected
+        // // empresa.responsavel = "Lucas";  // método private
 
-        empresa.cnpj = 15236544;        // método default 
-        empresa.razao_social ="";       // método public 
-        empresa.nome_fantasia = "";     // método protected
-        // empresa.responsavel = "Lucas";  // método private
+        // franqueada.m1();   // método default   
+        // franqueada.m2();   // método protected
+        // // franqueada.m3();   // método private
 
-        franqueada.m1();   // método default   
-        franqueada.m2();   // método protected
-        // franqueada.m3();   // método private
+        // franqueada.cnpj = 15236544;        // atributo default 
+        // franqueada.razao_social ="";       // atributo public 
+        // franqueada.nome_fantasia = "";     // atributo protected
+        // // franqueada.responsavel = "Lucas";  // atributo private
 
-        franqueada.cnpj = 15236544;        // atributo default 
-        franqueada.razao_social ="";       // atributo public 
-        franqueada.nome_fantasia = "";     // atributo protected
-        // franqueada.responsavel = "Lucas";  // atributo private
 
+        // Exercicio 1 - Material 7:
+        Funcionario f1 = new Funcionario();
+        f1.nome = "Lucas";
+        f1.salarioBase = 2177;
+
+        System.out.println(f1.getNome());
+        System.out.println("Salário Base: " + f1.getSalarioBase());
+        System.out.println("Encargos: " + f1.calcularEncargos());
+        System.out.println("Salário Líquido: " + (f1.getSalarioBase()-f1.calcularEncargos()));
+        f1.setSalarioBase(3500);
+        System.out.println("Novo Salário Líquido: " + (f1.getSalarioBase()-f1.calcularEncargos()));
     }
 }

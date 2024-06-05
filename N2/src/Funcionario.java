@@ -3,9 +3,9 @@ public class Funcionario {
     protected double salarioBase;
 
     public double calcularEncargos(){
-        double encargosTrabalhistas = this.salarioBase*0.1944;
-        double encargosSociais = this.salarioBase*0.112;
-        double previdenciarioSemFeriasDTerceiro = this.salarioBase*0.0218;
+        double encargosTrabalhistas = this.getSalarioBase()*0.1944;
+        double encargosSociais = this.getSalarioBase()*0.112;
+        double previdenciarioSemFeriasDTerceiro = this.getSalarioBase()*0.0218;
 
         return encargosTrabalhistas + encargosSociais + previdenciarioSemFeriasDTerceiro;
     }
@@ -14,7 +14,7 @@ public class Funcionario {
         return this.salarioBase;
     }
 
-    public void setSalarioBase(double novoSalarioBase) {
+    protected void setSalarioBase(double novoSalarioBase) {// O método estava com encapsulamento private e não era possível invocá-lo a partir de um objeto.
         this.salarioBase = novoSalarioBase;
     }
 

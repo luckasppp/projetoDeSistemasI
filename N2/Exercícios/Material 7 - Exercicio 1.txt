@@ -1,0 +1,100 @@
+public class Funcionario {
+    protected String nome;
+    protected double salarioBase;
+
+    public double calcularEncargos(){
+        double encargosTrabalhistas = this.getSalarioBase()*0.1944;
+        double encargosSociais = this.getSalarioBase()*0.112;
+        double previdenciarioSemFeriasDTerceiro = this.getSalarioBase()*0.0218;
+
+        return encargosTrabalhistas + encargosSociais + previdenciarioSemFeriasDTerceiro;
+    }
+
+    public double getSalarioBase(){
+        return this.salarioBase;
+    }
+
+    protected void setSalarioBase(double novoSalarioBase) { // O método estava com encapsulamento private e não era possível invocá-lo a partir de um objeto.
+        this.salarioBase = novoSalarioBase;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String novoNome) {
+        this.nome = novoNome;
+    }
+}
+
+public class Freelancer extends Funcionario {
+    private int diasTrabalhados;
+    private int valorDia;
+
+    @Override
+    public double calcularEncargos() {
+        double impostos = this.getSalarioBase() * 0.09;
+        double inss = this.getSalarioBase() * 0.11;
+        double contabilidade = 100;
+
+        return impostos + inss + contabilidade;
+    }
+
+    public int getDiasTrabalhados() {
+        return this.diasTrabalhados;
+    }
+
+    protected void setDiasTrabalhados(int diasTrabalhados) {
+        this.diasTrabalhados = diasTrabalhados;
+    }
+
+    public int getValorDia() {
+        return this.valorDia;
+    }
+
+    public void setValorDia(int novoValorDia) {
+        this.valorDia = novoValorDia;
+    }
+}
+
+public class Vendedor extends Funcionario {
+    private double comissao;
+
+    @Override
+    public double calcularEncargos() {
+        double encargosTrabalhistas = this.getSalarioBase()*0.1944;
+        double encargosSociais = this.getSalarioBase()*0.112;
+        double previdenciarioSemFeriasDTerceiro = this.getSalarioBase()*0.0218;
+
+        double fgts = this.getComissao() * 0.08;
+        double ir = this.getComissao() * 0.075;
+        double inss = this.getComissao() * 0.085;
+
+        return encargosTrabalhistas + encargosSociais +
+        previdenciarioSemFeriasDTerceiro + fgts + ir + inss;
+    }
+
+    public double getComissao() {
+        return this.comissao;
+    }
+
+    protected void setComissao(double comissao) {
+        this.comissao = comissao;
+    }
+}
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        // Exercicio 1 - Material 7:
+        Funcionario f1 = new Funcionario();
+        f1.nome = "Lucas";
+        f1.salarioBase = 2177;
+
+        System.out.println(f1.getNome());
+        System.out.println("Salário Base: " + f1.getSalarioBase());
+        System.out.println("Encargos: " + f1.calcularEncargos());
+        System.out.println("Salário Líquido: " + (f1.getSalarioBase()-f1.calcularEncargos()));
+        f1.setSalarioBase(3500);
+        System.out.println("Novo Salário Líquido: " + (f1.getSalarioBase()-f1.calcularEncargos()));
+    }
+}

@@ -4,8 +4,8 @@ public class Freelancer extends Funcionario {
 
     @Override
     public double calcularEncargos() {
-        double impostos = this.salarioBase * 0.09;
-        double inss = this.salarioBase * 0.11;
+        double impostos = this.getSalarioBase() * 0.09;
+        double inss = this.getSalarioBase() * 0.11;
         double contabilidade = 100;
 
         return impostos + inss + contabilidade;
@@ -15,7 +15,7 @@ public class Freelancer extends Funcionario {
         return this.diasTrabalhados;
     }
 
-    public void setDiasTrabalhados(int diasTrabalhados) {
+    protected void setDiasTrabalhados(int diasTrabalhados) {
         this.diasTrabalhados = diasTrabalhados;
     }
 
